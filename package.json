@@ -1,0 +1,10 @@
+{
+  "name": "latinos-in-the-usa",
+  "type": "module",
+  "dependencies": {
+    "astro": "^4.0.0"
+  },
+  "scripts": {
+    "build": "astro build"
+  }
+}
