@@ -1,62 +1,6 @@
----
-// src/pages/index.astro
-// If you don't have this image yet, use a placeholder so the build passes
-const bgImage = "/images/coming-soon-bg.jpg";
----
+State:
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latinos In The USA — Coming Soon</title>
-    <style define:vars={{ bgImage: `url("${bgImage}")` }}>
-      :root {
-        --bg: #0b0907;
-        --bg-soft: #15110d;
-        --cream: #efe8dd;
-        --cream-dim: #cbbfae;
-        --gold: #d6a33a;
-        --gold-soft: #a97c25;
-        --accent: #d9643a;
-        --line: rgba(239, 232, 221, 0.14);
-        --shadow: rgba(0, 0, 0, 0.55);
-      }
-
-      * { box-sizing: border-box; }
-
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        background: var(--bg);
-        color: var(--cream);
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .page {
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(5, 4, 3, 0.2) 0%, rgba(5, 4, 3, 0.76) 72%, rgba(5, 4, 3, 0.95) 100%),
-          radial-gradient(circle at 18% 24%, rgba(214, 163, 58, 0.18), transparent 34%),
-          radial-gradient(circle at 82% 70%, rgba(217, 100, 58, 0.08), transparent 30%),
-          var(--bg);
-      }
-
-      .page::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(90deg, rgba(6, 5, 4, 0.88) 0%, rgba(6, 5, 4, 0.45) 36%, rgba(6, 5, 4, 0.78) 100%),
-          var(--bgImage) center center / cover no-repeat;
-        filter: grayscale(16%);
-        transform: scale(1.03);
-        z-index: 0;
-      }
-
-      /* Rest of the CSS provided in your prompt... */
+Build failed
       .page::after {
         content: "";
         position: absolute;
