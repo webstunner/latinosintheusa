@@ -1,5 +1,45 @@
-<html>
-  <body style="background:black; color:white; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif;">
-    <h1>LATINOS IN THE USA: SANDBOX LIVE</h1>
-  </body>
+---
+// src/pages/index.astro
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Latinos In The USA | Coming Soon</title>
+	</head>
+	<body class="bg-zinc-950 text-white selection:bg-red-600">
+		
+		<main class="relative h-screen w-full overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<img 
+					src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?q=80&w=2070&auto=format&fit=crop" 
+					class="h-full w-full object-cover opacity-50 grayscale"
+					alt="Cinematic Background"
+				/>
+				<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/50"></div>
+			</div>
+
+			<div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+				<span class="font-mono text-xs uppercase tracking-[0.6em] text-red-600 mb-4">A Digital Artifact</span>
+				
+				<h1 class="text-7xl font-black uppercase leading-[0.8] tracking-tighter sm:text-[12rem]">
+					LATINOS <br/> <span class="italic text-zinc-300">IN THE USA</span>
+				</h1>
+
+				<div class="mt-12 flex flex-col items-center gap-6">
+					<div class="h-px w-24 bg-red-600"></div>
+					<h2 class="font-mono text-2xl uppercase tracking-widest text-white">Coming Soon</h2>
+					<p class="max-w-md font-serif text-zinc-400 italic">
+						Building a cinematic home for our stories, our history, and our future.
+					</p>
+				</div>
+			</div>
+
+			<div class="absolute bottom-8 w-full text-center z-10">
+				<p class="font-mono text-[10px] uppercase tracking-widest text-zinc-600">
+					&copy; 2026 // LatinosInTheUSA.com
+				</p>
+			</div>
+		</main>
+
+	</body>
 </html>
