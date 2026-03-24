@@ -1,6 +1,60 @@
-State:
+---
+// src/pages/index.astro
+const bgImage = "/images/coming-soon-bg.jpg";
+---
 
-Build failed
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latinos In The USA — Coming Soon</title>
+    <style define:vars={{ bgUrl: `url(${bgImage})` }}>
+      :root {
+        --bg: #0b0907;
+        --bg-soft: #15110d;
+        --cream: #efe8dd;
+        --cream-dim: #cbbfae;
+        --gold: #d6a33a;
+        --gold-soft: #a97c25;
+        --accent: #d9643a;
+        --line: rgba(239, 232, 221, 0.14);
+        --shadow: rgba(0, 0, 0, 0.55);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--cream);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(5, 4, 3, 0.2) 0%, rgba(5, 4, 3, 0.76) 72%, rgba(5, 4, 3, 0.95) 100%),
+          radial-gradient(circle at 18% 24%, rgba(214, 163, 58, 0.18), transparent 34%),
+          radial-gradient(circle at 82% 70%, rgba(217, 100, 58, 0.08), transparent 30%),
+          var(--bg);
+      }
+
+      .page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(6, 5, 4, 0.88) 0%, rgba(6, 5, 4, 0.45) 36%, rgba(6, 5, 4, 0.78) 100%),
+          var(--bgUrl) center center / cover no-repeat;
+        filter: grayscale(16%);
+        transform: scale(1.03);
+        z-index: 0;
+      }
+
       .page::after {
         content: "";
         position: absolute;
@@ -118,7 +172,8 @@ Build failed
         margin-top: 30px;
       }
 
-      .btn, .ghost {
+      .btn,
+      .ghost {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -132,10 +187,25 @@ Build failed
         transition: 180ms ease;
       }
 
-      .btn { background: var(--accent); color: #fff; }
-      .btn:hover { background: #e47249; }
-      .ghost { border-color: var(--line); color: var(--cream); background: rgba(255, 255, 255, 0.02); }
-      .ghost:hover { border-color: rgba(239, 232, 221, 0.28); background: rgba(255, 255, 255, 0.05); }
+      .btn {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn:hover {
+        background: #e47249;
+      }
+
+      .ghost {
+        border-color: var(--line);
+        color: var(--cream);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .ghost:hover {
+        border-color: rgba(239, 232, 221, 0.28);
+        background: rgba(255, 255, 255, 0.05);
+      }
 
       .panel {
         justify-self: end;
@@ -146,10 +216,31 @@ Build failed
         box-shadow: 0 30px 80px var(--shadow);
       }
 
-      .panel-inner { padding: 28px 24px; }
-      .panel-kicker { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-      .panel-title { margin: 0 0 12px; font-size: 1.6rem; line-height: 1.05; text-transform: uppercase; }
-      .panel-copy { margin: 0; color: var(--cream-dim); line-height: 1.65; font-size: 0.96rem; }
+      .panel-inner {
+        padding: 28px 24px;
+      }
+
+      .panel-kicker {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+
+      .panel-title {
+        margin: 0 0 12px;
+        font-size: 1.6rem;
+        line-height: 1.05;
+        text-transform: uppercase;
+      }
+
+      .panel-copy {
+        margin: 0;
+        color: var(--cream-dim);
+        line-height: 1.65;
+        font-size: 0.96rem;
+      }
 
       .stats {
         margin-top: 24px;
@@ -160,8 +251,20 @@ Build failed
         gap: 18px 12px;
       }
 
-      .stat-label { display: block; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 6px; }
-      .stat-value { font-size: 1.15rem; font-weight: 800; color: var(--cream); }
+      .stat-label {
+        display: block;
+        font-size: 0.66rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: 6px;
+      }
+
+      .stat-value {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--cream);
+      }
 
       .footer {
         display: flex;
@@ -172,25 +275,90 @@ Build failed
         padding-top: 16px;
       }
 
-      .quote { margin: 0 0 8px; font-family: Georgia, serif; font-size: clamp(1.15rem, 1.8vw, 1.55rem); font-style: italic; line-height: 1.35; }
-      .meta { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-dim); }
-      .year { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+      .foot-copy {
+        max-width: 620px;
+      }
+
+      .quote {
+        margin: 0 0 8px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+        font-style: italic;
+        line-height: 1.35;
+      }
+
+      .meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+      }
+
+      .year {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        white-space: nowrap;
+      }
 
       @media (max-width: 980px) {
-        .hero { grid-template-columns: 1fr; align-items: start; padding-top: 44px; }
-        .panel { justify-self: start; width: min(100%, 460px); }
-        h1 { max-width: 12ch; }
+        .hero {
+          grid-template-columns: 1fr;
+          align-items: start;
+          padding-top: 44px;
+        }
+
+        .panel {
+          justify-self: start;
+          width: min(100%, 460px);
+        }
+
+        h1 {
+          max-width: 12ch;
+        }
       }
 
       @media (max-width: 640px) {
-        .shell { padding: 18px 18px 20px; }
-        .topbar, .footer { display: block; }
-        .nav-note, .year { margin-top: 12px; }
-        .hero { gap: 28px; padding: 34px 0 28px; }
-        h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); max-width: 8ch; }
-        .lede { font-size: 0.98rem; }
-        .panel-inner { padding: 22px 18px; }
-        .quote { font-size: 1.08rem; }
+        .shell {
+          padding: 18px 18px 20px;
+        }
+
+        .topbar,
+        .footer {
+          display: block;
+        }
+
+        .nav-note,
+        .year {
+          margin-top: 12px;
+        }
+
+        .hero {
+          gap: 28px;
+          padding: 34px 0 28px;
+        }
+
+        h1 {
+          font-size: clamp(3.2rem, 16vw, 5.2rem);
+          max-width: 8ch;
+        }
+
+        .lede {
+          font-size: 0.98rem;
+        }
+
+        .panel-inner {
+          padding: 22px 18px;
+        }
+
+        .stats {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .quote {
+          font-size: 1.08rem;
+        }
       }
     </style>
   </head>
